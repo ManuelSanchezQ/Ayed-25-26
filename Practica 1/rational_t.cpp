@@ -63,7 +63,12 @@ double rational_t::value() const
 
 
 // comparaciones
-
+/* is_equal
+  * @brief Compara dos racionales para ver si son iguales
+  * @param r: Racional a comparar con el que hace la llamada
+  * @param precision: Presicion para determinar si sus valores en punto flotante son iguales
+  * @return True si son iguales o false si no
+  */
 bool rational_t::is_equal(const rational_t& r, const double precision) const {
   if (fabs(value() - r.value()) < precision) {
     return true;
@@ -72,7 +77,12 @@ bool rational_t::is_equal(const rational_t& r, const double precision) const {
 }
 
 
-
+/* is_greater
+  * @brief Compara dos racionales para ver si el que hace la llamada es mayor que el segundo
+  * @param r: Racional a comparar con el que hace la llamada
+  * @param precision: Presicion para determinar si su valor en punto flotante es mayor que el otro 
+  * @return True si es mayor o false si no
+  */
 bool rational_t::is_greater(const rational_t& r, const double precision) const {
   if (value() - r.value() > precision) {
     return true;
@@ -80,8 +90,12 @@ bool rational_t::is_greater(const rational_t& r, const double precision) const {
   return false;
 }
 
-
-
+/* is_less
+  * @brief Compara dos racionales para ver si el que hace la llamada es menor que el segundo
+  * @param r: Racional a comparar con el que hace la llamada
+  * @param precision: Presicion para determinar si su valor en punto flotante es menor que el otro 
+  * @return True si es menor o false si no
+  */
 bool rational_t::is_less(const rational_t& r, const double precision) const {
   if (r.value() - value() > precision) {
     return true;
@@ -91,28 +105,44 @@ bool rational_t::is_less(const rational_t& r, const double precision) const {
 
 
 // operaciones
-
+/* add
+  * @brief Suma dos racionales
+  * @param r: Racional a sumar con el que hace la llamada
+  * @return Racional que representa la suma de ambos
+  */
 rational_t rational_t::add(const rational_t& r) const {
   rational_t result{(get_num() * r.get_den() + r.get_num() * get_den()), (get_den() * r.get_den())};
   return result;
 }
 
 
-
+/* substract
+  * @brief Resta dos racionales
+  * @param r: Racional a restar con el que hace la llamada
+  * @return Racional que representa la resta de ambos
+  */
 rational_t rational_t::substract(const rational_t& r) const { 
   rational_t result{(get_num() * r.get_den() - r.get_num() * get_den()), (get_den() * r.get_den())};
   return result;
 }
 
 
-
+ /* multiply
+  * @brief Multiplica dos racionales
+  * @param r: Racional a multiplicar con el que hace la llamada
+  * @return Racional que representa la multiplicacion de ambos
+  */
 rational_t rational_t::multiply(const rational_t& r) const {
   rational_t result{(get_num() * r.get_num()), (get_den() * r.get_den())};
   return result;
 }
 
 
-
+/* divide
+  * @brief Divide dos racionales
+  * @param r: Racional que divide al que hace la llamada
+  * @return Racional que representa la division de ambos
+  */
 rational_t rational_t::divide(const rational_t& r) const { 
   rational_t result{get_num() * r.get_den(), get_den() * r.get_num()};
   return result;

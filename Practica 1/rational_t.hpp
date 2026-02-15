@@ -39,20 +39,61 @@ class rational_t
 
   /* value
   * @brief Devuelve en valor en numero decimal del racional correspondiente
-  * @param: void 
+  * @param void 
   * @return Devuelve en valor en 
   */ 
   double value(void) const;
 
   // FASE II
+  /* is_equal
+  * @brief Compara dos racionales para ver si son iguales
+  * @param r: Racional a comparar con el que hace la llamada
+  * @param precision: Presicion para determinar si sus valores en punto flotante son iguales
+  * @return True si son iguales o false si no
+  */
   bool is_equal(const rational_t&, const double precision = EPSILON) const;
+  /* is_greater
+  * @brief Compara dos racionales para ver si el que hace la llamada es mayor que el segundo
+  * @param r: Racional a comparar con el que hace la llamada
+  * @param precision: Presicion para determinar si su valor en punto flotante es mayor que el otro 
+  * @return True si es mayor o false si no
+  */
   bool is_greater(const rational_t&, const double precision = EPSILON) const;
+  /* is_less
+  * @brief Compara dos racionales para ver si el que hace la llamada es menor que el segundo
+  * @param r: Racional a comparar con el que hace la llamada
+  * @param precision: Presicion para determinar si su valor en punto flotante es menor que el otro 
+  * @return True si es menor o false si no
+  */
   bool is_less(const rational_t&, const double precision = EPSILON) const;
   
   // FASE III
+  /* add
+  * @brief Suma dos racionales
+  * @param r: Racional a sumar con el que hace la llamada
+  * @return Racional que representa la suma de ambos
+  */
   rational_t add(const rational_t&) const;
+
+   /* substract
+  * @brief Resta dos racionales
+  * @param r: Racional a restar con el que hace la llamada
+  * @return Racional que representa la resta de ambos
+  */
   rational_t substract(const rational_t&) const;
+
+   /* multiply
+  * @brief Multiplica dos racionales
+  * @param r: Racional a multiplicar con el que hace la llamada
+  * @return Racional que representa la multiplicacion de ambos
+  */
   rational_t multiply(const rational_t&) const;
+
+   /* divide
+  * @brief Divide dos racionales
+  * @param r: Racional que divide al que hace la llamada
+  * @return Racional que representa la division de ambos
+  */
   rational_t divide(const rational_t&) const;
   
   /* write
