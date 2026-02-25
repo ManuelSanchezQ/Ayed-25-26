@@ -57,5 +57,8 @@ int main()
   cout << "a / b: ";
   a.divide(b).write();
   
+  // Modificacion
+  cout << "Opuesto de a" << std::endl;
+  a.opuesto().write();
   return 0;
 }

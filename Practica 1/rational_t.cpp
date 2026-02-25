@@ -174,3 +174,13 @@ void  rational_t::read(istream& is) {
   is >> den_;
   assert(den_ != 0);
 }
+
+//Modificacion
+/* Opuesto
+  * @brief Devuelve el racional opuesto
+  * @return El objeto de tipo racional opuesto
+  */
+rational_t rational_t::opuesto() const { 
+  rational_t result{-num_, den_};
+  return result;
+}

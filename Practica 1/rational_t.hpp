@@ -110,6 +110,14 @@ class rational_t
   * @return void
   */ 
   void read(istream& = cin);
+
+  // Modificación
+
+  /* Opuesto
+  * @brief Devuelve el racional opuesto
+  * @return El objeto de tipo racional opuesto
+  */
+  rational_t opuesto() const;
   
  private:
   // pauta de estilo: Nombre de los atributos seguido de "_"
