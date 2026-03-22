@@ -65,5 +65,9 @@ int main()
   cout << "Multiplicación de matrices A y B: " << endl;
   C.write();
   
+
+  // modificacion
+  cout << "Minimo de y" << endl;
+  min(y).write();
   return 0;
 }

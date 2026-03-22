@@ -220,3 +220,13 @@ scal_prod(const vector_t<rational_t>& v, const vector_t<rational_t>& w)
   }
   return result;
 }
+// Modificacion
+rational_t min(const vector_t<rational_t>& v) {
+  rational_t min{v[0]};     
+  for (size_t i{0}; i < v.get_size(); ++i) {
+    if (v[i].is_less(min)) {
+      min = v[i];
+    }
+  }
+  return min;
+}
