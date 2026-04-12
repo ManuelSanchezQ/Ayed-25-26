@@ -91,5 +91,13 @@ int main()
   cout << "sp3 == p2? " << (sp3.IsEqual(p2) ? "true" : "false") << endl;
   cout << endl;
 
+
+  // Modificacion
+  cout << "Coeficientes pares sp1: " << endl;
+  sp1.MostrarCoefPares();
+  cout << "Coeficientes pares sp2: " << endl;
+  sp2.MostrarCoefPares();
+  cout << "Coeficientes pares sp3: " << endl;
+  sp3.MostrarCoefPares();
   return 0;
 }

@@ -55,6 +55,9 @@ class SparsePolynomial : public sparse_vector_t {
   double Eval(const double) const;
   bool IsEqual(const SparsePolynomial&, const double = EPS) const;
   bool IsEqual(const Polynomial&, const double = EPS) const;
+
+  // Modificación
+  void MostrarCoefPares(std::ostream& = std::cout);
 };
 
 // E/S
@@ -196,5 +199,12 @@ bool SparsePolynomial::IsEqual(const Polynomial& pol, const double eps) const {
   return !differents;
 }
 
+void SparsePolynomial::MostrarCoefPares(std::ostream& out ) {
+  for (size_t i{0}; i < get_nz(); ++i) {
+    if (at(i).get_inx() % 2 == 0) {
+      out << "coeficiente de grado " << at(i).get_inx() << ":" << at(i).get_val() << std::endl;
+    }
+  }
+}
 
 #endif  // POLYNOMIAL_H_
